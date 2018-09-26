@@ -3,12 +3,15 @@ import { Link } from 'gatsby'
 import styled from 'react-emotion'
 
 import Nav from './Nav'
-
-const Header = ({ siteTitle }) => (
+const onAboutClick = () => {
+  console.log('clicked')
+  this.refs.about.scrollIntoView()
+}
+const Header = () => (
   <Container>
     <Logo />
     <Title>Joey Ricketts</Title>
-    <Nav />
+    <Nav onAboutClick={onAboutClick} />
   </Container>
 )
 
@@ -16,8 +19,7 @@ export default Header
 
 const Container = styled('div')`
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 `
 const Title = styled('h1')`

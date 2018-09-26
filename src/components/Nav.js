@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
+import * as Scroll from 'react-scroll'
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll'
 
 export default class Nav extends Component {
   render() {
     return (
       <List>
-        <Item>About</Item>
-        <Item>Services</Item>
-        <Item>Contact</Item>
+        <Item onClick={this.props.onAboutClick}>About</Item>
+        <Item onClick={this.props.onClick}>Services</Item>
+        <Item onClick={this.props.onClick}>Contact</Item>
       </List>
     )
   }
