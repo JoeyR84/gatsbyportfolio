@@ -5,9 +5,7 @@ export default class Contact extends Component {
   render() {
     return (
       <Container>
-        <Title>
-          Have a project in mind or just want to say hello? Give me a shout!
-        </Title>
+        <Title>Say hello!</Title>
         <FormContainer>
           <form name="contact" method="POST" netlify>
             <p>
@@ -45,14 +43,14 @@ export default class Contact extends Component {
 const Container = styled('div')`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-around;
   height: 100vh;
-  background-image: linear-gradient(#060fa0, #000784);
+  background-color: #587cb0;
 `
 const Title = styled('h1')`
   color: #fff;
-  margin-bottom: 5vh;
-  margin-top: 10vh;
   text-align: center;
   width: 560px;
   @media (max-width: 400px) {
@@ -91,7 +89,7 @@ const Button = styled('button')`
 `
 
 const Textarea = styled('textarea')`
-  width: 560px;
+  width: 460px;
   height: 200px;
   font-size: 18px;
   border-radius: 5px;

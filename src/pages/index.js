@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import styled from 'react-emotion'
 import {
   Link,
-  DirectLink,
   Element,
   Events,
   animateScroll as scroll,
-  scrollSpy,
   scroller,
 } from 'react-scroll'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import Intro from '../components/Intro'
@@ -53,6 +53,17 @@ export default class IndexPage extends Component {
             <TitleContainer>
               <Logo />
               <Title>Joey Ricketts</Title>
+              <Links>
+                <An href="https://www.linkedin.com/in/joeyricketts/">
+                  <Image sizes={this.props.data.linkedin.sizes} />
+                </An>
+                <An href="https://github.com/JoeyR84">
+                  <Image sizes={this.props.data.github.sizes} />
+                </An>
+                <An href="https://www.instagram.com/climb_or_code/">
+                  <Image sizes={this.props.data.instagram.sizes} />
+                </An>
+              </Links>
             </TitleContainer>
             <List>
               <Item
@@ -62,7 +73,7 @@ export default class IndexPage extends Component {
                 smooth={true}
                 duration={500}
               >
-                About
+                Projects
               </Item>
               <Item
                 activeClass="active"
@@ -84,7 +95,7 @@ export default class IndexPage extends Component {
               </Item>
             </List>
           </Container>
-          <Intro />
+          <Intro photo={this.props.data.faceImage} />
         </IntroContainer>
         <Element name="about">
           <About />
@@ -105,7 +116,7 @@ const IntroContainer = styled('div')`
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(#2b35bf, #1e28bc);
+  background-color: #587cb0;
 `
 const Container = styled('div')`
   display: flex;
@@ -120,13 +131,14 @@ const TitleContainer = styled('div')`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
 `
 
 const Title = styled('p')`
   display: flex;
   color: #fff;
   font-size: 24px;
-  width: 50vw;
+  width: 150px;
   margin-left: 12px;
   margin-top: 30px;
 `
@@ -138,6 +150,23 @@ const Logo = styled('div')`
   width: 60px;
   border-radius: 30px;
   margin-left: 2%;
+`
+
+const Links = styled('div')`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+`
+
+const An = styled('a')`
+  display: flex;
+  margin-right: 10px;
+`
+
+const Image = styled(Img)`
+  display: flex;
+  width: 25px;
+  height: 25px;
 `
 
 const List = styled('div')`
@@ -153,4 +182,29 @@ const Item = styled(Link)`
   font-size: 18px;
   font-weight: 300;
   color: #fff;
+`
+
+export const imageQuery = graphql`
+  query imageQuery {
+    faceImage: imageSharp(original: { src: { regex: "/face/" } }) {
+      sizes(maxWidth: 300) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    linkedin: imageSharp(original: { src: { regex: "/linkedin/" } }) {
+      sizes(maxWidth: 300) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    github: imageSharp(original: { src: { regex: "/github/" } }) {
+      sizes(maxWidth: 300) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    instagram: imageSharp(original: { src: { regex: "/instagram/" } }) {
+      sizes(maxWidth: 300) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
 `

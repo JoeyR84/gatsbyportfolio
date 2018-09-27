@@ -1,23 +1,29 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
-
-import Header from './header'
+import Img from 'gatsby-image'
 
 export default class Intro extends Component {
   render() {
     return (
       <Container>
         <LeftContainer>
-          <Title>Hi, I'm Joey. I'm a frontend JavaScript Developer.</Title>
-          <CoverPhoto />
+          <TitleContainer>
+            <Title>Hi, I'm Joey.</Title>
+            <Desc>I build awesome stuff with JavaScript</Desc>
+          </TitleContainer>
         </LeftContainer>
         <RightContainer>
-          <Photo />
+          <Image sizes={this.props.photo.sizes} />
+          <Emojis>
+            <span role="img" alt="emojis of computer taco and rock climber">
+              👨‍💻 🌮 🧗‍♂️
+            </span>
+          </Emojis>
           <Bio>
-            Hi im joey and I do lots of stuff. i have a dog and some other stuff
-            too. I dont feel like writing about myself right now. Hi im joey and
-            I do lots of stuff. i have a dog and some other stuff too. I dont
-            feel like writing about myself right now.
+            Hi I'm joey and I'm a frontend dev. Solving new problems with
+            cutting edge technologies really gets me excited. I'm forever a
+            student, willing and eager to soak up knowledge. I also enjoy rock
+            climbing, tacos, and my dogs.
           </Bio>
         </RightContainer>
       </Container>
@@ -28,56 +34,70 @@ export default class Intro extends Component {
 const Container = styled('div')`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
 `
 
 const LeftContainer = styled('div')`
   display: flex;
   flex-wrap: wrap;
-  width: 70vw;
+  width: 600px;
   height: 100%;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-left: 10vw;
+  padding-top: 10vh;
 `
 
 const RightContainer = styled('div')`
   display: flex;
   flex-direction: column;
+  flex-shrink: inherit;
   height: 100%;
-  width: 30vw;
-  border: 1px solid #000;
+  width: 300px;
+  background-color: #0e425a;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
   padding-left: 12px;
   padding-right: 12px;
 `
 
 const Bio = styled('p')`
+  display: flex;
   color: #fff;
-  margin-top: 30px;
+`
+const Emojis = styled('p')`
+  display: flex;
+  font-size: 40px;
+  height: 30px;
 `
 
-const Photo = styled('div')`
+const Image = styled(Img)`
+  display: flex;
   width: 200px;
   height: 200px;
   border-radius: 100px;
-  background-color: #000;
-  margin-top: 30px;
+  margin-top: 10px;
 `
 
-const CoverPhoto = styled('div')`
+// const CoverPhoto = styled('div')`
+//   display: flex;
+//   height: 250px;
+//   width: 250px;
+//   border-radius: 120px;
+//   background-color: #000;
+// `
+
+const TitleContainer = styled('div')`
   display: flex;
-  height: 250px;
-  width: 250px;
-  border-radius: 120px;
-  background-color: #000;
+  flex-direction: column;
 `
 
-const Title = styled('p')`
-  font-size: 40px;
-  max-width: 600px;
+const Title = styled('h1')`
   color: #fff;
-  width: 60%;
+`
+
+const Desc = styled('p')`
+  color: #fff;
+  font-size: 22px;
 `

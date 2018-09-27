@@ -31,7 +31,6 @@ const TechStack = () => (
     `}
     render={data => (
       <Container>
-        {console.log(data)}
         <Title>I create awesome stuff with...</Title>
         <Service>React + React Native</Service>
         <Image sizes={data.reactImage.sizes} alt="react logo" />
@@ -57,11 +56,11 @@ export default TechStack
 
 const Container = styled('div')`
   height: 100vh;
-  background-image: linear-gradient(#1019a3, #060fa0);
+  background-color: #587cb0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
 `
 
 const Title = styled('h1')`
