@@ -117,6 +117,9 @@ const IntroContainer = styled('div')`
   height: 100vh;
   width: 100%;
   background-color: #587cb0;
+  @media (max-width: 420px) {
+    height: 180vh;
+  }
 `
 const Container = styled('div')`
   display: flex;

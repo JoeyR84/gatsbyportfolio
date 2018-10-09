@@ -44,6 +44,7 @@ const Title = styled('h1')`
 const ProjectsContainer = styled('div')`
   display: flex;
   justify-content: space-around;
+  @media (max-width: 420px);
 `
 
 const Project = styled('div')`
@@ -52,6 +53,10 @@ const Project = styled('div')`
   width: 250px;
   height: 250px;
   margin: 20px;
+  @media (max-width: 420px) {
+    width: 150px;
+    height: 150px;
+  }
 `
 
 const Para = styled('p')`
