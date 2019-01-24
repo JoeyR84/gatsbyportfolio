@@ -4,8 +4,6 @@ import { Link, animateScroll as scroll } from 'react-scroll'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import GatsbyLogo from '../images/GatsbyLogo.svg'
-
 const TechStack = () => (
   <StaticQuery
     query={graphql`
