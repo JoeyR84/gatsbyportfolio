@@ -20,10 +20,9 @@ export default class Intro extends Component {
             </span>
           </Emojis>
           <Bio>
-            Hi I'm joey and I'm a freelance frontend dev. Solving new problems
-            with cutting edge technologies is my passion. I'm forever a student,
-            willing and eager to soak up knowledge. I also enjoy rock climbing,
-            tacos, and my dogs.
+            Hi I'm joey and I'm a freelance frontend dev. I help businesses
+            succeed with custom websites. I also enjoy rock climbing, tacos, and
+            my dogs.
           </Bio>
         </RightContainer>
       </Container>

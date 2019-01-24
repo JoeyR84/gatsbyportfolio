@@ -4,7 +4,7 @@ import { Link, animateScroll as scroll } from 'react-scroll'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import apolloImg from '../images/logo-apollo.svg'
+import GatsbyLogo from '../images/GatsbyLogo.svg'
 
 const TechStack = () => (
   <StaticQuery
@@ -20,9 +20,7 @@ const TechStack = () => (
             ...GatsbyImageSharpSizes
           }
         }
-        graphqlImage: imageSharp(
-          original: { src: { regex: "/graphql-logo/" } }
-        ) {
+        gatsbyImage: imageSharp(original: { src: { regex: "/gatsby-icon/" } }) {
           sizes(maxWidth: 300) {
             ...GatsbyImageSharpSizes
           }
@@ -32,17 +30,30 @@ const TechStack = () => (
     render={data => (
       <Container>
         <Title>I create awesome stuff with...</Title>
-        <Service>React + React Native</Service>
-        <Image sizes={data.reactImage.sizes} alt="react logo" />
-        <Service>GraphQL + Apollo</Service>
-        <Image sizes={data.graphqlImage.sizes} alt="graphql logo" />
-        <Pimage src={apolloImg} alt="apollo logo" />
+        <StackContainer>
+          <TechContainer>
+            <Service>React + React Native</Service>
+            <Desc>
+              React is a modern JavaScript library developed by facebook
+            </Desc>
+            <Image sizes={data.reactImage.sizes} alt="react logo" />
+          </TechContainer>
+          <TechContainer>
+            <Service>Gatsby</Service>
+            <Desc>
+              Gatsby is a blazing fast static site generate built on React.js
+              and GraphQL
+            </Desc>
+            <Image sizes={data.gatsbyImage.sizes} alt="graphql logo" />
+          </TechContainer>
+        </StackContainer>
         <Link
           activeClass="active"
           to="contact"
           spy={true}
           smooth={true}
           duration={500}
+          style={{ color: '#fff' }}
         >
           {' '}
           Contact me!
@@ -55,9 +66,10 @@ const TechStack = () => (
 export default TechStack
 
 const Container = styled('div')`
-  height: 100vh;
   background-color: #587cb0;
   display: flex;
+  height: 100vh;
+  padding: 40px;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -80,6 +92,26 @@ const Service = styled('p')`
 const Image = styled(Img)`
   width: 80px;
   height: 80px;
+`
+
+const TechContainer = styled('div')`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+`
+
+const StackContainer = styled('div')`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-around;
+`
+
+const Desc = styled('p')`
+  color: #fff;
 `
 
 const Pimage = styled('img')`

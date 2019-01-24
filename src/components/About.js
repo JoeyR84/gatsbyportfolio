@@ -6,10 +6,20 @@ export default class About extends Component {
   render() {
     return (
       <Container>
-        <Title>Current Projects (coming soon!)</Title>
+        <Header>Services</Header>
         <ProjectsContainer>
-          <Project />
-          <Project />
+          <ServiceContainer>
+            <Title>Business Sites</Title>
+            <Project />
+          </ServiceContainer>
+          <ServiceContainer>
+            <Title>Restaurants/Trucks</Title>
+            <Project />
+          </ServiceContainer>
+          <ServiceContainer>
+            <Title>Portfolios/Galleries</Title>
+            <Project />
+          </ServiceContainer>
         </ProjectsContainer>
         <Pink
           activeClass="active"
@@ -32,31 +42,46 @@ const Container = styled('div')`
   justify-content: space-around;
   align-items: center;
   background-color: #587cb0;
+  width: 100%;
 `
 
-const Title = styled('h1')`
+const Header = styled('h1')`
   display: flex;
   text-align: center;
-  margin-top: 10vh;
+  color: #fff;
+`
+
+const Title = styled('h3')`
   color: #fff;
 `
 
 const ProjectsContainer = styled('div')`
   display: flex;
-  justify-content: space-around;
-  @media (max-width: 420px);
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  @media (max-width: 420px) {
+  }
 `
 
 const Project = styled('div')`
   display: flex;
   background-color: #fff;
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   margin: 20px;
   @media (max-width: 420px) {
     width: 150px;
     height: 150px;
   }
+`
+
+const ServiceContainer = styled('div')`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
 `
 
 const Para = styled('p')`
