@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'react-emotion'
 import { Link as Pink, animateScroll as scroll } from 'react-scroll'
 
-export default class About extends Component {
+export default class Services extends Component {
   render() {
     return (
       <Container>
@@ -28,7 +28,12 @@ export default class About extends Component {
           smooth={true}
           duration={500}
         >
-          <Para>Check out the stack!</Para>
+          <Para>
+            Check out the stack!
+            <span role="img" alt="emojis of computer taco and rock climber">
+              👇
+            </span>
+          </Para>
         </Pink>
       </Container>
     )
@@ -86,4 +91,5 @@ const ServiceContainer = styled('div')`
 
 const Para = styled('p')`
   color: #fff;
+  font-size: 22px;
 `

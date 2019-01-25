@@ -5,7 +5,12 @@ export default class Contact extends Component {
   render() {
     return (
       <Container>
-        <Title>Hire me</Title>
+        <Title>Contact</Title>
+        <Desc>
+          I am currently taking on new clients. Contact me to hire me, with any
+          questions, or just to say hello! I look forward to hearing from you :
+          ){' '}
+        </Desc>
         <FormContainer>
           <Form name="contact" method="POST" netlify>
             <p>
@@ -73,8 +78,9 @@ const Label = styled('label')`
 `
 
 const Input = styled('input')`
-  width: 280px;
+  width: 320px;
   height: 32px;
+  padding: 15px;
   font-size: 28px;
   border-radius: 5px;
   padding-left: 5px;
@@ -86,11 +92,11 @@ const Input = styled('input')`
 
 const Button = styled('button')`
   height: 38px;
-  width: 100px;
+  width: 130px;
   border-radius: 5px;
   border: 1.5px solid #5bf770;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
   vertical-align: middle;
   padding: 0px;
@@ -104,7 +110,7 @@ const Form = styled('form')`
 `
 
 const Textarea = styled('textarea')`
-  width: 460px;
+  width: 560px;
   height: 200px;
   font-size: 18px;
   border-radius: 5px;
@@ -113,4 +119,8 @@ const Textarea = styled('textarea')`
     width: 90vw;
     font-size: 16px;
   }
+`
+
+const Desc = styled('p')`
+  color: #fff;
 `

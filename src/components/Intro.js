@@ -60,7 +60,7 @@ const RightContainer = styled('div')`
   flex-direction: column;
   flex-shrink: inherit;
   height: 100%;
-  width: 300px;
+  width: 400px;
   background-color: #0e425a;
   align-items: center;
   justify-content: space-around;
@@ -91,9 +91,9 @@ const Emojis = styled('p')`
 
 const Image = styled(Img)`
   display: flex;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
   margin-top: 10px;
   @media (max-width: 420px) {
     margin-top: 30px;

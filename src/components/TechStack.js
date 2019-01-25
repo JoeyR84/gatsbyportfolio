@@ -32,7 +32,8 @@ const TechStack = () => (
           <TechContainer>
             <Service>React + React Native</Service>
             <Desc>
-              React is a modern JavaScript library developed by facebook
+              React is a modern JavaScript library developed by facebook. React
+              native is a tool to create cross platform mobile apps.
             </Desc>
             <Image sizes={data.reactImage.sizes} alt="react logo" />
           </TechContainer>
@@ -51,10 +52,16 @@ const TechStack = () => (
           spy={true}
           smooth={true}
           duration={500}
-          style={{ color: '#fff' }}
+          style={{
+            color: '#fff',
+            fontSize: 22,
+          }}
         >
           {' '}
           Contact me!
+          <span role="img" alt="emojis of computer taco and rock climber">
+            👇
+          </span>
         </Link>
       </Container>
     )}
@@ -110,8 +117,4 @@ const StackContainer = styled('div')`
 
 const Desc = styled('p')`
   color: #fff;
-`
-
-const Pimage = styled('img')`
-  max-width: 300px;
 `

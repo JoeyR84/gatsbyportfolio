@@ -12,7 +12,7 @@ import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import Intro from '../components/Intro'
-import About from '../components/About'
+import Services from '../components/Services'
 import TechStack from '../components/TechStack'
 import Contact from '../components/Contact'
 
@@ -68,12 +68,12 @@ export default class IndexPage extends Component {
             <List>
               <Item
                 activeClass="active"
-                to="about"
+                to="services"
                 spy={true}
                 smooth={true}
                 duration={500}
               >
-                Projects
+                Services
               </Item>
               <Item
                 activeClass="active"
@@ -97,8 +97,8 @@ export default class IndexPage extends Component {
           </Container>
           <Intro photo={this.props.data.faceImage} />
         </IntroContainer>
-        <Element name="about">
-          <About />
+        <Element name="services">
+          <Services />
         </Element>
         <Element name="techstack">
           <TechStack />
@@ -176,13 +176,13 @@ const List = styled('div')`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-right: 12px;
+  margin-right: 32px;
 `
 
 const Item = styled(Link)`
   display: flex;
   margin-left: 5vw;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 300;
   color: #fff;
 `
