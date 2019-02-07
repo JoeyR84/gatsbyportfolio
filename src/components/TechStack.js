@@ -84,6 +84,9 @@ const Title = styled('h1')`
   text-align: center;
   font-size: 50px;
   color: #fff;
+  @media (max-width: 450px) {
+    font-size: 30px;
+  }
 `
 const Service = styled('p')`
   display: flex;
@@ -105,6 +108,9 @@ const TechContainer = styled('div')`
   justify-content: center;
   align-items: center;
   width: 40%;
+  @media (max-width: 400px) {
+    width: 90%;
+  }
 `
 
 const StackContainer = styled('div')`
@@ -113,6 +119,9 @@ const StackContainer = styled('div')`
   width: 100%;
   align-items: flex-start;
   justify-content: space-around;
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
 `
 
 const Desc = styled('p')`

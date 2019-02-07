@@ -48,6 +48,9 @@ const Container = styled('div')`
   align-items: center;
   background-color: #587cb0;
   width: 100%;
+  @media (max-width: 700px) {
+    padding-top: 50px;
+  }
 `
 
 const Header = styled('h1')`
@@ -58,6 +61,10 @@ const Header = styled('h1')`
 
 const Title = styled('h3')`
   color: #fff;
+  @media (max-width: 475px) {
+    max-width: 150px;
+    font-size: 18px;
+  }
 `
 
 const ProjectsContainer = styled('div')`
@@ -65,7 +72,11 @@ const ProjectsContainer = styled('div')`
   justify-content: space-evenly;
   flex-direction: row;
   width: 100%;
-  @media (max-width: 420px) {
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -76,8 +87,8 @@ const Project = styled('div')`
   height: 150px;
   margin: 20px;
   @media (max-width: 420px) {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
   }
 `
 
@@ -87,6 +98,10 @@ const ServiceContainer = styled('div')`
   justify-content: center;
   align-items: center;
   width: 200px;
+  @media (max-width: 475px) {
+    width: 35vw;
+    margin: 5px;
+  }
 `
 
 const Para = styled('p')`

@@ -9,21 +9,23 @@ export default class Intro extends Component {
         <LeftContainer>
           <TitleContainer>
             <Title>Hi, I'm Joey.</Title>
-            <Desc>I build awesome stuff with JavaScript</Desc>
+            <SubTitle>I build awesome stuff with JavaScript</SubTitle>
           </TitleContainer>
         </LeftContainer>
         <RightContainer>
           <Image sizes={this.props.photo.sizes} />
-          <Emojis>
-            <span role="img" alt="emojis of computer taco and rock climber">
-              👨‍💻 🌮 🧗‍♂️
-            </span>
-          </Emojis>
-          <Bio>
-            Hi I'm joey and I'm a freelance frontend dev. I help businesses
-            succeed with custom websites. I also enjoy rock climbing, tacos, and
-            my dogs.
-          </Bio>
+          <DescContainer>
+            <Emojis>
+              <span role="img" alt="emojis of computer taco and rock climber">
+                👨‍💻 🌮 🧗‍♂️
+              </span>
+            </Emojis>
+            <Bio>
+              Hi I'm joey and I'm a freelance frontend dev. I help businesses
+              succeed with custom websites. I also enjoy rock climbing, tacos,
+              and my dogs.
+            </Bio>
+          </DescContainer>
         </RightContainer>
       </Container>
     )
@@ -32,11 +34,14 @@ export default class Intro extends Component {
 
 const Container = styled('div')`
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `
 
 const LeftContainer = styled('div')`
@@ -53,6 +58,10 @@ const LeftContainer = styled('div')`
     justify-content: center;
     padding-right: 20px;
   }
+  @media (max-width: 700px) {
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 const RightContainer = styled('div')`
@@ -66,16 +75,22 @@ const RightContainer = styled('div')`
   justify-content: space-around;
   padding-left: 12px;
   padding-right: 12px;
+  @media (max-width: 700px) {
+    width: 100%;
+    flex-direction: row;
+  }
   @media (max-width: 420px) {
     width: 100vw;
     height: 60%;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: column;
   }
 `
 
 const Bio = styled('p')`
   display: flex;
   color: #fff;
+  padding: 20px;
   @media (max-width: 420px) {
     margin-top: 10px;
   }
@@ -98,6 +113,10 @@ const Image = styled(Img)`
   @media (max-width: 420px) {
     margin-top: 30px;
   }
+  @media (max-width: 700px) {
+    width: 200px;
+    height: 200px;
+  }
 `
 
 const TitleContainer = styled('div')`
@@ -109,7 +128,14 @@ const Title = styled('h1')`
   color: #fff;
 `
 
-const Desc = styled('p')`
+const SubTitle = styled('p')`
   color: #fff;
   font-size: 22px;
+`
+
+const DescContainer = styled('div')`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `

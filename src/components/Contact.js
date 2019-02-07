@@ -72,7 +72,7 @@ const FormContainer = styled('div')`
 
 const Label = styled('label')`
   font-size: 30px;
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 90vw;
   }
 `
@@ -115,7 +115,10 @@ const Textarea = styled('textarea')`
   font-size: 18px;
   border-radius: 5px;
   padding: 10px;
-  @media (max-width: 400px) {
+  @media (max-width: 700px) {
+    width: 90vw;
+  }
+  @media (max-width: 420px) {
     width: 90vw;
     font-size: 16px;
   }
@@ -123,4 +126,8 @@ const Textarea = styled('textarea')`
 
 const Desc = styled('p')`
   color: #fff;
+  max-width: 560px;
+  @media (max-width: 700px) {
+    padding: 20px;
+  }
 `
