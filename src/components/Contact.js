@@ -51,8 +51,12 @@ const Container = styled('div')`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  height: 100vh;
+  height: 100%;
   background-color: #587cb0;
+  width: 100vw;
+  @media (max-width: 400px) {
+    max-width: 400px;
+  }
 `
 const Title = styled('h1')`
   color: #fff;
@@ -68,6 +72,9 @@ const FormContainer = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 400px) {
+    max-width: 400px;
+  }
 `
 
 const Label = styled('label')`
@@ -85,7 +92,7 @@ const Input = styled('input')`
   border-radius: 5px;
   padding-left: 5px;
   @media (max-width: 400px) {
-    width: 90vw;
+    width: 100%;
     font-size: 22px;
   }
 `
@@ -107,6 +114,7 @@ const Form = styled('form')`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 `
 
 const Textarea = styled('textarea')`
